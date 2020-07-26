@@ -1,6 +1,0 @@
-All the sprites will be kept under this directory.
-However, I doubt any other sprites than the arrow will be used,
-and in all honesty, in the future I might draw the vertices of the arrow manually with linear algebra.
-Doing so would remove all dependancies for external files in the project.
-
-But for now, the Sprites folder needs to be under the same directory as the sourcecode.
