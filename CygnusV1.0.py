@@ -448,7 +448,9 @@ class Projectile:
 
 		# load the sprite then convert it to a pixel array to change its colour to the player's colour
 		# the proj being the player's colour helps them keep track of their shots
-		self.sprite = pygame.image.load(os.path.join("Sprites", "Arrow20.png")).convert_alpha()
+		spriteFile = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Sprites\\Arrow20.png")
+		self.sprite = pygame.image.load(spriteFile).convert_alpha()
+		
 		colouredSprite = pygame.PixelArray(self.sprite)
 		self.colourDist = 0.52
 		self.baseColour = (254,0,0)
@@ -672,7 +674,9 @@ class PhantomArrow:
 		ycomp = position[1] - self.planet.pos[1]
 
 		rotationAngle = atan2(velocity[1], - velocity[0])*180/pi
-		self.sprite = pygame.image.load(os.path.join("Sprites", "Arrow20.png")).convert_alpha()
+		spriteFile = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Sprites\\Arrow20.png")
+		self.sprite = pygame.image.load(spriteFile).convert_alpha()
+		
 		colouredSprite = pygame.PixelArray(self.sprite)
 		colouredSprite.replace(proj.baseColour, colour, distance = proj.colourDist)
 
